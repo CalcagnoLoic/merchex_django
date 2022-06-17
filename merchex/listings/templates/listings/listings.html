@@ -1,0 +1,13 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h1>Voici la liste des évènements à venir :</h1>
+<p>Il y a actuellement {{titles|length}} à venir : </p>
+<ul>
+    {% for title in titles %}
+    <li>{{title.name_title}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

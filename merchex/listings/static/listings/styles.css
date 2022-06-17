@@ -1,0 +1,19 @@
+* {
+    background: #e59898;
+    padding-top:15px;
+    padding-left: 15px;
+}
+
+.liste {
+    padding-left: 80px;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+p {
+    font-size: 25px;
+}
