@@ -8,12 +8,16 @@
     padding-left: 80px;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     text-decoration: underline;
     font-style: italic;
 }
 
+li {
+    font-size: 20px;
+}
+
 p {
-    font-size: 25px;
+    font-size: 20px;
 }

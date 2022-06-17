@@ -6,7 +6,7 @@
 <p>Il y a actuellement {{titles|length}} objets à vendre : </p>
 <ul>
     {% for title in titles %}
-    <li>{{title.name_title}}</li>
+    <li><a href="/title/{{ title.id }}/">{{title.name_title}}</a></li>
     {% endfor %}
 </ul>
 
