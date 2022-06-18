@@ -6,11 +6,14 @@
         <meta name="description" content="Site web créé à partir du framework Django">
         <title>Merchex</title>
         <link rel="stylesheet" href="{% static 'listings/styles.css' %}"/>
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg">
     </head>
     <body>
         <nav>
             <a href="{% url 'band-list' %}">Groupes</a>
             <a href="{% url 'listings-list' %}">Annonces</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'about' %}">A propos de nous</a>
         </nav>
 
         {% block content %}
