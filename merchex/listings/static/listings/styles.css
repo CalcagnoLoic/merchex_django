@@ -82,3 +82,19 @@ nav {
 .option {
     padding-top: 15px;
 }
+
+.send_del {
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    margin-top: 15px;
+    background-color: red;
+    border: none;
+    color: white;
+}
+.send_del:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: ease-in-out 0.5s;
+}

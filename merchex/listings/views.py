@@ -138,12 +138,20 @@ CRUD DELETE
 def band_delete(request, id):
     band = Band.objects.get(id=id)
 
+    if request.method == "POST":
+        band.delete()
+        return redirect('band-list')
+
     return render(request, 'listings/band_delete.html',
                   {'band': band})
 
 
 def listings_delete(request, id):
     title = Title.objects.get(id=id)
+
+    if request.method == "POST":
+        title.delete()
+        return redirect('listings-list')
 
     return render(request, 'listings/listings_delete.html',
                   {'title': title})
