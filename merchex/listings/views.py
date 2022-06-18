@@ -133,3 +133,17 @@ def listings_change(request, id):
 """
 CRUD DELETE
 """
+
+
+def band_delete(request, id):
+    band = Band.objects.get(id=id)
+
+    return render(request, 'listings/band_delete.html',
+                  {'band': band})
+
+
+def listings_delete(request, id):
+    title = Title.objects.get(id=id)
+
+    return render(request, 'listings/listings_delete.html',
+                  {'title': title})
