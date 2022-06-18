@@ -12,6 +12,8 @@
     <li>Groupe : {{title.band}}</li>
 </ul>
 
+<a href="{% url 'listings-change' title.id %}">Modifier ce groupe</a>
+
 <a href="{% url 'listings-list' %}">Retour vers les annonces disponibles</a>
 
 {% endblock %}

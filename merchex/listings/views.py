@@ -7,6 +7,10 @@ from listings.models import Title
 from listings.forms import ContactUsForm, BandForm, TitleForm
 
 
+"""
+Page de l'application
+"""
+
 def band_list(request):
     bands = Band.objects.all()
     return render(request, 'listings/band_list.html',
@@ -17,10 +21,6 @@ def band_detail(request, id):
     band = Band.objects.get(id=id)
     return render(request, 'listings/band_detail.html',
                   {'band': band})
-
-
-def about(request):
-    return render(request, 'listings/about.html')
 
 
 def listings_list(request):
@@ -34,6 +34,13 @@ def listings_detail(request, id):
     return render(request, 'listings/listings_detail.html',
                   {'title': title})
 
+
+def about(request):
+    return render(request, 'listings/about.html')
+
+"""
+Contact form
+"""
 
 def contact(request):
     #print('La méthode de requête est : ', request.method)
@@ -59,6 +66,9 @@ def contact(request):
 def email_sent(request):
     return render(request, 'listings/email_sent.html')
 
+"""
+CRUD CREATE
+"""
 
 def band_create(request):
     if request.method == 'POST':
@@ -84,3 +94,42 @@ def listings_create(request):
 
     return render(request, 'listings/listings_create.html',
                   {'form': form})
+
+
+"""
+CRUD UPDATE
+"""
+
+def band_change(request, id):
+    band = Band.objects.get(id=id)
+
+    if request.method == 'POST':
+        form = BandForm(request.POST, instance=band)
+        if form.is_valid():
+            form.save()
+            return redirect('band-detail', band.id)
+    else:
+        form = BandForm(instance=band)
+
+    return render(request, 'listings/band_change.html',
+                  {'form': form})
+
+
+def listings_change(request, id):
+    title = Title.objects.get(id=id)
+
+    if request.method == "POST":
+        form = TitleForm(request.POST, instance=title)
+        if form.is_valid():
+            form.save()
+            return redirect('listings-detail', title.id)
+    else:
+        form = TitleForm(instance=title)
+
+    return render(request, 'listings/listings_change.html',
+                  {'form': form})
+
+
+"""
+CRUD DELETE
+"""

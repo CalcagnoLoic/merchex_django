@@ -9,7 +9,10 @@
 <p class="link"> Il y a actuellement {{titles|length}} objets à vendre : </p>
 <ul>
     {% for title in titles %}
-    <li><a href="/title/{{ title.id }}/">{{title.name_title}}</a></li>
+    <li>
+        <a href="/title/{{ title.id }}/">{{title.name_title}}</a> -
+        <a href="{% url 'listings-change' title.id %}">[Modifier]</a>
+    </li>
     {% endfor %}
 </ul>
 
