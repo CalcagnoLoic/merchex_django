@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 
 from listings.models import Band
 from listings.models import Title
-from listings.forms import ContactUsForm
+from listings.forms import ContactUsForm, BandForm, TitleForm
 
 
 def band_list(request):
@@ -58,3 +58,29 @@ def contact(request):
 
 def email_sent(request):
     return render(request, 'listings/email_sent.html')
+
+
+def band_create(request):
+    if request.method == 'POST':
+        form = BandForm(request.POST)
+        if form.is_valid():
+            band = form.save()
+            return redirect('band-detail', band.id)
+    else:
+        form = BandForm()
+
+    return render(request, 'listings/band_create.html',
+                  {'form': form})
+
+
+def listings_create(request):
+    if request.method == 'POST':
+        form = TitleForm(request.POST)
+        if form.is_valid():
+            title = form.save()
+            return redirect('listings-detail', title.id)
+    else:
+        form = TitleForm()
+
+    return render(request, 'listings/listings_create.html',
+                  {'form': form})

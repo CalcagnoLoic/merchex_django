@@ -3,7 +3,10 @@
 {% block content %}
 
 <h1>Voici la liste des objets à vendre :</h1>
-<p>Il y a actuellement {{titles|length}} objets à vendre : </p>
+
+<a href="{% url 'listings-create' %}">Créer une nouvelle annonce</a>
+
+<p class="link"> Il y a actuellement {{titles|length}} objets à vendre : </p>
 <ul>
     {% for title in titles %}
     <li><a href="/title/{{ title.id }}/">{{title.name_title}}</a></li>

@@ -1,6 +1,5 @@
 * {
     background: #7ac0f3;
-    padding-top:15px;
     padding-left: 15px;
     margin: 0 auto;
 }
@@ -14,7 +13,7 @@ h1, h2 {
     text-decoration: underline;
     font-style: italic;
 }
-h1{
+h1, h2{
     padding-bottom: 25px;
 }
 
@@ -22,13 +21,18 @@ li {
     font-size: 20px;
 }
 
-p {
+p, a {
     font-size: 20px;
 }
 
-input {
+input, select {
     border-radius: 10px;
     background-color: white;
+    margin: 1%;
+    padding-bottom: 5px;
+}
+form {
+    padding: 2%;
 }
 
 .send {
@@ -36,7 +40,7 @@ input {
     text-align: center;
     padding: 10px;
     display: block;
-    margin: 0 auto;
+    margin-top: 15px;
 }
 .send:hover{
     cursor: pointer;
@@ -62,4 +66,15 @@ nav {
     gap: 5px;
     font-style: italic;
     padding-bottom: 70px;
+    padding-top: 5%;
+}
+
+.biography {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.link{
+    padding-top: 15px;
+    padding-bottom : 15px
 }
